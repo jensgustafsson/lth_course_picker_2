@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LTH:s kursväljare</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">LTH:s kursväljare BETA</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header jumbotron">
+    <h1 class="text-center">Hej hopp! <small>Här kan du välja kurser, kul va!</small></h1>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+
+
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ul id ="SpecializationFilter" class="list-inline">
+            </ul>    
+          </div>
+        </div>
+
+        
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ul class="nav nav-pills">
+              <li role="presentation"><a href="#">Läsår 4</a></li>
+              <li role="presentation"><a href="#">Läsår 5</a></li>
+              <li role="presentation"><a href="#">Extraår 1</a></li>
+              <li role="presentation"><a href="#">Extraår 2</a></li>                    
+              
+            </ul>    
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ul id="StudyPeriodFilter" class="nav nav-pills">
+            </ul>     
+
+            <h3>Valfria kurser</h3>
+            
+            <ul id="courseCollection" class="list-group">
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="col-sm-12 col-md-6">
+
+        <!-- BEGIN DETALJER -->
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Översikt
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+                <ul class="list-group">
+                  <li class="list-group-item">Valda poäng: 47 hp</li>
+                  <li class="list-group-item">Avancerade poäng: 12 hp</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Inriktningar
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+                <ul class="list-group">
+                  <li class="list-group-item">Programvara: 47 hp</li>
+                  <li class="list-group-item">Kommunikationssystem: 12 hp</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- END DETALJER -->
+
+
+        <!-- BEGIN LÄSÅR -->
+        <!-- ######################################################## -->
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Läsår 4<span class="badge pull-right">25 hp</span>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Läsår 5<span class="badge pull-right">42 hp</span>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+                <ul class="list-group">
+                  <li class="list-group-item">Kurs a</li>
+                  <li class="list-group-item">Kurs b</li>
+                  <li class="list-group-item">Kurs c</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Extraår 1
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Extraår 2
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- END LÄSÅR -->
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="footer" style="background:#bdc3c7">
+    <div class="container">
+        <h4 class="text-muted credit">And a footer...</h4>
+    </div>
+  </div> 
+
+
+
+
+</body>
+
+<script src="js/lib/require.js" data-main="js/config.js"></script>
+
+</html>

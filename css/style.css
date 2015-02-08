@@ -1,0 +1,17 @@
+body { padding-top: 70px; }
+
+.filterSpecItem {
+    margin-top: 5px;
+}
+
+#addStudyYear {
+	margin-bottom: 10px;
+}
+
+.page-header.jumbotron {
+	margin-top: 0;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+	margin-bottom: 0;
+}
