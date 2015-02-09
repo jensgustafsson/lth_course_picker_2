@@ -4,14 +4,13 @@ define([
   'backbone', 
   'collections/CourseCollection',
   'collections/TimeTableCollection',
-  'views/CourseListView',
-  'views/FilterSpecializationView',
-  'views/FilterStudyYearView',
-  'views/FilterStudyPeriodView',
+  'views/course/CourseListView',
+  'views/filter/FilterSpecializationView',
+  'views/filter/FilterStudyYearView',
+  'views/filter/FilterStudyPeriodView',
   'views/SpecializationTitleView',
   'views/TimeTableView'
 ], function ( $, _, Backbone, CourseCollection, TimeTableCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView, TimeTableView ) {
-
 
     ApplicationRouter = Backbone.Router.extend({
 

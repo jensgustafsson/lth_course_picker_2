@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/FilterSpecializationItemView'
+  'views/filter/FilterSpecializationItemView'
 ], function ( $, _, Backbone, FilterSpecializationItemView ) { 
 
 
