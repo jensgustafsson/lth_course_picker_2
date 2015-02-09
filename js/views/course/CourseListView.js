@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/CourseItemView'
+  'views/course/CourseItemView'
 ], function ( $, _, Backbone, CourseItemView ) { 
 
   CourseListView = Backbone.View.extend({

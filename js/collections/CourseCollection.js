@@ -27,19 +27,19 @@ define([
             var studyPeriods = this.filterData.studyPeriods;
             switch(period) {
                 case 'LP 1':
-                    studyPeriods[0] = !studyPeriods[0];
-                    break;
-                case 'LP 2':
                     studyPeriods[1] = !studyPeriods[1];
                     break;
-                case 'LP 3':
+                case 'LP 2':
                     studyPeriods[2] = !studyPeriods[2];
                     break;
-                case 'LP 4':
+                case 'LP 3':
                     studyPeriods[3] = !studyPeriods[3];
                     break;
-                case 'LP saknas':
+                case 'LP 4':
                     studyPeriods[4] = !studyPeriods[4];
+                    break;
+                case 'LP saknas':
+                    studyPeriods[5] = !studyPeriods[5];
                     break;
             }
             this.filterData.studyPeriods = studyPeriods;

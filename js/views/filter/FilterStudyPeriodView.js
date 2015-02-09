@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/FilterStudyPeriodItemView'
+  'views/filter/FilterStudyPeriodItemView'
 ], function ( $, _, Backbone, FilterStudyPeriodItemView ) { 
 
     FilterStudyPeriodView = Backbone.View.extend({

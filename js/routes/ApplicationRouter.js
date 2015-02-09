@@ -4,9 +4,9 @@ define([
   'backbone', 
   'collections/CourseCollection',
   'views/CourseListView',
-  'views/FilterSpecializationView',
-  'views/FilterStudyYearView',
-  'views/FilterStudyPeriodView',
+  'views/filter/FilterSpecializationView',
+  'views/filter/FilterStudyYearView',
+  'views/filter/FilterStudyPeriodView',
   'views/SpecializationTitleView'
 ], function ( $, _, Backbone, CourseCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView ) {
 
