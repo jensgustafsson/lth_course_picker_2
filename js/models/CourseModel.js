@@ -15,6 +15,11 @@ define([
     	},
 
     	hasStudyPeriod : function (thisPeriod) {
+            
+            var inr = this.get('inriktningar')[0].id;
+            if(inr == 'exjobb' && thisPeriod == 4)
+                return true;
+
     		var studyPeriods = this.getStudyPeriods();
     		var exist = _.find(studyPeriods, function (thatPeriod) {// should have '==='
     			return thisPeriod == thatPeriod;

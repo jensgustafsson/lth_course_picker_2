@@ -9,37 +9,47 @@ define([
         
         url: "server/server.php",
         model: CourseModel,
-
+    
         filterData : {
-            specialization : 'none',
-            studyPeriods : [true, true, true, true, true]
+            specialization  : 'none',
+            activeYear      : 'none', 
+            studyPeriods    : [true, true, true, true, true]
+        },
+
+        setActiveYear : function (activeYear) {
+
+            this.filterData.activeYear = activeYear;
+            Backbone.trigger('renderStudyYears');
+
         },
 
         toggleStudyPeriod : function (period) {
+            var studyPeriods = this.filterData.studyPeriods;
             switch(period) {
                 case 'LP 1':
-                    this.filterData.studyPeriods[0] = !this.filterData.studyPeriods[0];
+                    studyPeriods[0] = !studyPeriods[0];
                     break;
                 case 'LP 2':
-                    this.filterData.studyPeriods[1] = !this.filterData.studyPeriods[1];
+                    studyPeriods[1] = !studyPeriods[1];
                     break;
                 case 'LP 3':
-                    this.filterData.studyPeriods[2] = !this.filterData.studyPeriods[2];
+                    studyPeriods[2] = !studyPeriods[2];
                     break;
                 case 'LP 4':
-                    this.filterData.studyPeriods[3] = !this.filterData.studyPeriods[3];
+                    studyPeriods[3] = !studyPeriods[3];
                     break;
                 case 'LP saknas':
-                    this.filterData.studyPeriods[4] = !this.filterData.studyPeriods[4];
+                    studyPeriods[4] = !studyPeriods[4];
                     break;
             }
-            console.log(this.filterData.studyPeriods);
-            this.trigger("change");
+            this.filterData.studyPeriods = studyPeriods;
+            this.trigger('change');
         },
 
         chooseSpecialization : function (special) {
-            this.filterData.specialization = special;
-            this.trigger("change");
+            this.filterData.specialization = special.id;
+            this.trigger('change');
+            Backbone.trigger('changeSpecialization', {title: special.fullName});
         },
 
         applyFilter: function(){

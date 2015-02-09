@@ -6,34 +6,54 @@ define([
 
     FilterModel = Backbone.Model.extend({
 
-    	defaults: {
-    		specialization : 'none',
-    		studyPeriods : [true, true, true, true, true]
-  		},
+        defaults : {
+            specialization : 'none',
+            studyPeriods : [true, true, true, true, true]
+        },
+
+        toggleStudyPeriod : function (period) {
+            switch(period) {
+                case 'LP 1':
+                    this.filterData.studyPeriods[0] = !this.filterData.studyPeriods[0];
+                    break;
+                case 'LP 2':
+                    this.filterData.studyPeriods[1] = !this.filterData.studyPeriods[1];
+                    break;
+                case 'LP 3':
+                    this.filterData.studyPeriods[2] = !this.filterData.studyPeriods[2];
+                    break;
+                case 'LP 4':
+                    this.filterData.studyPeriods[3] = !this.filterData.studyPeriods[3];
+                    break;
+                case 'LP saknas':
+                    this.filterData.studyPeriods[4] = !this.filterData.studyPeriods[4];
+                    break;
+            }
+            console.log(this.filterData.studyPeriods);
+            //this.trigger("change");
+        },
+
+        chooseSpecialization : function (special) {
+            this.filterData.specialization = special;
+            //this.trigger("change");
+        },
 
     	initialize : function () {
-    		this.listenTo(Backbone, 'filter:toggleAllSP', this.toggleAllStudyPeriods);
-    		this.listenTo(Backbone, 'filter:toggleSP', this.toggleStudyPeriod);
-    		this.listenTo(Backbone, 'filter:chooseSpec', this.chooseSpecialization);
+    		this.listenTo(Backbone, 'filter:toggleAllSP', this.test);
+    		this.listenTo(Backbone, 'filter:toggleSP', this.test);
+    		this.listenTo(Backbone, 'filter:chooseSpec', this.test);
     	},
 
-    	toggleStudyPeriod : function (period) {
-            console.log('toggle SP');
-            
-            var periodIndex = period - 1;
-            var newStudyPeriods = this.get('studyPeriods');
-            studyPeriods[periodIndex] = !studyPeriods[periodIndex]
-            this.set('studyPeriods', newStudyPeriods);
-    	},
+        test : function () {
+            console.log('hej');
+        }
 
+        /*
     	toggleAllStudyPeriods : function () {
     		console.log('toggle all SP:s');
             this.set('studyPeriods', [true, true, true, true, true]);
     	},
-
-    	chooseSpecialization : function (special) {
-            this.set('specialization', special);
-    	}
+        */
 
     });
 

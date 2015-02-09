@@ -6,21 +6,22 @@ define([
   'views/CourseListView',
   'views/FilterSpecializationView',
   'views/FilterStudyYearView',
-  'views/FilterStudyPeriodView'
-], function ( $, _, Backbone, CourseCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView ) {
+  'views/FilterStudyPeriodView',
+  'views/SpecializationTitleView'
+], function ( $, _, Backbone, CourseCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView ) {
 
 
     ApplicationRouter = Backbone.Router.extend({
 
       initialize : function() {
-        
+
         var courseCollection = new CourseCollection();
         courseCollection.fetch({ reset: true });
-        this.initCourseCollectionViews(courseCollection);
+        this.initViews(courseCollection);
 
       },
 
-      initCourseCollectionViews : function (courseCollection) {
+      initViews : function (courseCollection) {
 
         new CourseListView ({
           collection : courseCollection
@@ -34,13 +35,12 @@ define([
           collection : courseCollection
         });
 
-      },
-
-      initTimeTableViews : function (collections) {
-
         new FilterStudyYearView ({
-          
+          collection : courseCollection
         });
+
+        new SpecializationTitleView();
+
       }
 
     });

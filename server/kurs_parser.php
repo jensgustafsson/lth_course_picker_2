@@ -72,7 +72,7 @@ function merge_duplicates ($courses) {
 	
 	while (count($courses) != 0) {
 
-		$thisCourse = array_pop($courses);
+		$thisCourse = array_shift($courses);
 
 		$alreadyProcessed = false;
 		foreach ($uniqList as $foundCourse) {
@@ -93,7 +93,6 @@ function merge_duplicates ($courses) {
 		}
 		
 	}
-	echo count($uniqList) . "\n";
 	return $uniqList;
 }
 

@@ -143,9 +143,8 @@ class Kurs {
 			$inr = 'Valfria kurser';
 
 			$inriktning = (object) ['id' => $inr_id, 'fullName' => $inr];
+			array_push($this->inriktningar, $inriktning);
 
-//			$this->inriktning_id = 'valfri';
-//			$this->inriktning = 'Valfria kurser';
 		}
 
 		$this->program = $this->extractProgram();

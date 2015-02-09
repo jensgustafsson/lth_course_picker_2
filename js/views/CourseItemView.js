@@ -17,7 +17,9 @@ define([
 		},
 
 		render : function () {
-			this.$el.append(this.model.getCourseName());
+			var plusIcon = '<span class="glyphicon glyphicon-plus-sign pull-right"></span>';
+			var infoIcon = '<span style="margin-right: 5px" class="glyphicon glyphicon-info-sign pull-right"></span>';
+			this.$el.append(this.model.getCourseName() + plusIcon + infoIcon);
             return this;
 		},
 

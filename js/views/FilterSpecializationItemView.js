@@ -14,16 +14,18 @@ define([
 		},
 
 		onClick : function () {
-			this.collection.chooseSpecialization(this.specId);
+			this.collection.chooseSpecialization(this.spec);
+			this.$el.toggleClass('active');
 		},
 
 		initialize : function (args) {
-			this.specFullName = args.special.fullName;
-			this.specId = args.special.id;
+			this.spec = args.special;
 		},
 
 		render : function () {
-			this.$el.append(this.specFullName);
+			this.$el.empty();
+			this.$el.toggleClass('active', false);
+			this.$el.append(this.spec.fullName);
             return this;
 		}
 

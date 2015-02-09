@@ -13,6 +13,7 @@ define([
 
     initialize : function(args) {
       this.listenToOnce(this.collection, 'reset', this.setup);
+      this.listenTo(Backbone, 'changeSpecialization', this.render);
     },
 
     setup : function () {
@@ -33,11 +34,13 @@ define([
     },
 
     render : function () {
-      
+
       var container = document.createDocumentFragment();
       _.each(this._views, function (specialView) {
           container.appendChild(specialView.render().el);
         });
+
+      this.$el.empty();
       this.$el.append(container);
 
       return this;
