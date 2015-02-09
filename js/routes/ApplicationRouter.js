@@ -3,12 +3,14 @@ define([
   'underscore',
   'backbone', 
   'collections/CourseCollection',
+  'collections/TimeTableCollection',
   'views/CourseListView',
   'views/FilterSpecializationView',
   'views/FilterStudyYearView',
   'views/FilterStudyPeriodView',
-  'views/SpecializationTitleView'
-], function ( $, _, Backbone, CourseCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView ) {
+  'views/SpecializationTitleView',
+  'views/TimeTableView'
+], function ( $, _, Backbone, CourseCollection, TimeTableCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView, TimeTableView ) {
 
 
     ApplicationRouter = Backbone.Router.extend({
@@ -40,6 +42,12 @@ define([
         });
 
         new SpecializationTitleView();
+
+        new TimeTableView({
+          collection : new TimeTableCollection({
+            'studyYear' : 'läsår 4'
+          })
+        });
 
       }
 

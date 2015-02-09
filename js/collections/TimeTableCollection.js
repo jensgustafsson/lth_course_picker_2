@@ -9,7 +9,16 @@ define([
 
 	TimeTableCollection = CourseCollection.extend({
 
+		initialize : function (args) {
+			this.studyYear = args.studyYear;
+			this.listenTo(Backbone, 'add:timeTable', this.addCourse);
+		},
 
+		addCourse : function (args) {
+			if (this.studyYear === args.studyYear) {
+				this.add(args.course);
+			}
+		},
 
 	});
 
