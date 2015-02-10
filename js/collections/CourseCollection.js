@@ -27,19 +27,19 @@ define([
             var studyPeriods = this.filterData.studyPeriods;
             switch(period) {
                 case 'LP 1':
-                    studyPeriods[1] = !studyPeriods[1];
+                    studyPeriods[0] = !studyPeriods[0];
                     break;
                 case 'LP 2':
-                    studyPeriods[2] = !studyPeriods[2];
+                    studyPeriods[1] = !studyPeriods[1];
                     break;
                 case 'LP 3':
-                    studyPeriods[3] = !studyPeriods[3];
+                    studyPeriods[2] = !studyPeriods[2];
                     break;
                 case 'LP 4':
-                    studyPeriods[4] = !studyPeriods[4];
+                    studyPeriods[3] = !studyPeriods[3];
                     break;
                 case 'LP saknas':
-                    studyPeriods[5] = !studyPeriods[5];
+                    studyPeriods[4] = !studyPeriods[4];
                     break;
             }
             this.filterData.studyPeriods = studyPeriods;
@@ -71,7 +71,7 @@ define([
             for(var i = 0; i < studyPeriods.length; i++) {
                 if(studyPeriods[i]) {
                     var subResults = self.filter (function (course) {
-                        return course.hasStudyPeriod(i);
+                        return course.hasStudyPeriod(i+1);
                     });
                     results = results.concat(subResults);
                 }
