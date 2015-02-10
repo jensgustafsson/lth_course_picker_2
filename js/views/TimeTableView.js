@@ -7,11 +7,16 @@ define([
 
   TimeTableView = Backbone.View.extend({
 
-  	el: '#courseCollection',
+  	
     className : 'list-group',
 
-    initialize : function () {
-    	this.listenTo(this.collection, 'add', this.render);
+    initialize : function (args) {
+    	this.el = args.el;
+    	this.listenTo(this.collection, 'add', this.courseAdded);
+    },
+
+    courseAdded : function() {
+    	this.render();
     },
 
     render : function() {

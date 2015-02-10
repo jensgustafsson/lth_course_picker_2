@@ -21,6 +21,7 @@ define([
     },
 
     render : function() {
+      var thisCollection = this.collection;
       this.$el.empty();
 
       var filteredCollection = 
@@ -29,6 +30,7 @@ define([
       var container = document.createDocumentFragment();
       filteredCollection.each (function (course) {
         var view = new CourseItemView({
+          collection : thisCollection,
           model : course
         });
         container.appendChild(view.render().el);

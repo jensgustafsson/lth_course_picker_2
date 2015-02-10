@@ -44,8 +44,30 @@ define([
 
         new TimeTableView({
           collection : new TimeTableCollection({
-            'studyYear' : 'läsår 4'
-          })
+            'studyYear' : 'Läsår 4'
+          }),
+          'el' : '#studyYear4'
+        });
+
+        new TimeTableView({
+          collection : new TimeTableCollection({
+            'studyYear' : 'Läsår 5',
+          }),
+          'el' : '#studyYear5'
+        });
+
+        new TimeTableView({
+          collection : new TimeTableCollection({
+            'studyYear' : 'Extraår 1'
+          }),
+          'el' : '#studyExtraYear1'
+        });
+
+        new TimeTableView({
+          collection : new TimeTableCollection({
+            'studyYear' : 'Extraår 2'
+          }),
+          'el' : '#studyExtraYear2'
         });
 
       }

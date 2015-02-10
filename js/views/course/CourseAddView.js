@@ -14,12 +14,17 @@ define([
 		},
         
         onClick : function(){
-            alert("add");
+        	var studyYear = this.collection.filterData.activeYear;
+            Backbone.trigger('add:timeTable', {
+            	'studyYear': studyYear,
+            	'course': this.model
+            });
         }
         
         ,
 
 		initialize : function (args) {
+			this.studyYear = args.studyYear;
 		},
 
 		render : function () {
