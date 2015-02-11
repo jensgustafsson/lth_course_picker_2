@@ -42,7 +42,15 @@ define([
     			return thisSpecial == thatSpecial.id;
     		});
     		return exist;
-    	}
+    	},
+
+        isAdvanceCourse : function () {
+            return this.get('niva') == "A";
+        },
+
+        isOptionalCourse : function () {
+            return this.get('typ') == "V";
+        }
     	
     });
 

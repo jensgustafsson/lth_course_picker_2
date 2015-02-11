@@ -102,9 +102,7 @@ define([
             
             var subList = [];
             this.each(function(course){
-                console.log(specialization);
-                console.log(course.getCourseName());
-                console.log(course.inSpecialization(specialization.id));
+
                 if (course.inSpecialization(specialization.id))
                     subList.push(course);
             });
@@ -114,6 +112,31 @@ define([
             }, 0);
             return subList;
         },
+
+        getTotalCredits : function () {
+            return this.reduce(function(sum,item){
+                return sum + item.getCredits();
+            }, 0);
+        },
+
+        getTotalAdvanceCredits : function () {
+            return this.reduce(function(sum,item){
+                if(item.isAdvanceCourse())
+                    return sum + item.getCredits();
+                else
+                    return sum;
+            }, 0);
+        },
+
+        getTotalOptionalCredits : function () {
+            return this.reduce(function(sum,item){
+                if(item.isOptionalCourse())
+                    return sum + item.getCredits();
+                else
+                    return sum;
+            }, 0);  
+        }
+
 
 
 
