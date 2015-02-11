@@ -11,7 +11,7 @@ define([
     	
     	initialize : function () {
     		this.listenTo(this.collection, 'add', this.render);
-    		//this.listenTo(this.collection, 'remove', this.render);
+    		this.listenTo(this.collection, 'remove', this.render);
     	},
 	    
 	    render : function() {
@@ -26,7 +26,6 @@ define([
 			  container.appendChild(view.render().el);
 			});
 			this.$el.append(container);
-			this.$el.append('hsadhdsaj');
 			console.log(this.el);
 
 			return this;

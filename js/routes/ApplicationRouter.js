@@ -10,8 +10,9 @@ define([
   'views/filter/FilterStudyPeriodView',
   'views/SpecializationTitleView',
   'views/TimeTableView',
-  'views/SummaryView'
-], function ( $, _, Backbone, CourseCollection, TimeTableCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView, TimeTableView, SummaryView ) {
+  'views/SummaryView',
+  'views/SpecSummaryView'
+], function ( $, _, Backbone, CourseCollection, TimeTableCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView, TimeTableView, SummaryView, SpecSummaryView ) {
 
     ApplicationRouter = Backbone.Router.extend({
 
@@ -81,6 +82,9 @@ define([
           collection : globalTimeTable
         });
 
+        new SpecSummaryView({
+          collection : globalTimeTable
+        });
       }
 
     });

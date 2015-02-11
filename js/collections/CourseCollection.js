@@ -96,7 +96,18 @@ define([
                 });
             });
             return _.uniq(specializations, _.iteratee('id'));
-        }
+        },
+
+        getSpecialCredits : function (specialization) {
+            var subList = this.where(function(course){
+                return course.inSpecialization(specialization);
+            });
+            return _.reduce(subList, function (course) {
+                return course.getCredits();
+            });
+        },
+
+
 
 
     });
