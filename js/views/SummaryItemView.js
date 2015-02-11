@@ -15,7 +15,7 @@ define([
 
 		render : function () {
 
-			this.$el.append(this.model.getCourseName()); 
+			this.$el.append('RANDOM KURSDATA SOM SKA VISAS HÄR'); 
             return this;
 
 		},

@@ -10,7 +10,8 @@ define([
     initialize : function (args) {
     	this.el = args.el;
     	this.listenTo(this.collection, 'add', this.courseAdded);
-        this.globalTimeTable = args.globalTimeTable;
+      this.listenTo(this.collection, 'remove', this.render);
+      this.globalTimeTable = args.globalTimeTable;
     },
 
     courseAdded : function() {

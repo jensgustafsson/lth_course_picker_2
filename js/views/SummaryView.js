@@ -5,9 +5,9 @@ define([
   'views/SummaryItemView'
 ], function ( $, _, Backbone, SummaryItemView ) { 
 
-	el: '#courseSummary',
-
     DetailView = Backbone.View.extend({
+		
+		el: '#courseSummary',
     	
     	initialize : function () {
     		this.listenTo(this.collection, 'add', this.render);
@@ -26,6 +26,8 @@ define([
 			  container.appendChild(view.render().el);
 			});
 			this.$el.append(container);
+			this.$el.append('hsadhdsaj');
+			console.log(this.el);
 
 			return this;
 	    }
