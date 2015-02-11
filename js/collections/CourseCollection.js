@@ -99,12 +99,20 @@ define([
         },
 
         getSpecialCredits : function (specialization) {
-            var subList = this.where(function(course){
-                return course.inSpecialization(specialization);
+            
+            var subList = [];
+            this.each(function(course){
+                console.log(specialization);
+                console.log(course.getCourseName());
+                console.log(course.inSpecialization(specialization.id));
+                if (course.inSpecialization(specialization.id))
+                    subList.push(course);
             });
-            return _.reduce(subList, function (course) {
-                return course.getCredits();
-            });
+            
+            var subList =  _.reduce(subList, function (memo, course) {
+                return course.getCredits() + memo;
+            }, 0);
+            return subList;
         },
 
 

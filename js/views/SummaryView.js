@@ -15,7 +15,6 @@ define([
     	},
 	    
 	    render : function() {
-	    	console.log('render after add event')
 	    	this.$el.empty();
 			
 			var container = document.createDocumentFragment();
@@ -26,7 +25,6 @@ define([
 			  container.appendChild(view.render().el);
 			});
 			this.$el.append(container);
-			console.log(this.el);
 
 			return this;
 	    }
