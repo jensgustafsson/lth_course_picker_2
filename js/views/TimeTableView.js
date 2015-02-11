@@ -10,6 +10,7 @@ define([
     initialize : function (args) {
     	this.el = args.el;
     	this.listenTo(this.collection, 'add', this.courseAdded);
+        this.globalTimeTable = args.globalTimeTable;
     },
 
     courseAdded : function() {
@@ -17,11 +18,14 @@ define([
     },
 
     render : function() {
-      this.$el.empty();
+      this.$el.empty();      
       var container = document.createDocumentFragment();
+      var self = this;
       this.collection.each (function (course) {
         var view = new TimeTableItemView({
-          model : course
+          model : course,
+          collection : self.collection,
+          globalTimeTable : self.globalTimeTable
         });
         container.appendChild(view.render().el);
       });
