@@ -17,15 +17,17 @@ define([
       initialize : function() {
 
         var courseCollection = new CourseCollection();
+        var globalTimeTable = new TimeTableCollection({'studyYear' : 'none'});
         courseCollection.fetch({ reset: true });
-        this.initViews(courseCollection);
+        this.initViews(courseCollection, globalTimeTable);
 
       },
 
-      initViews : function (courseCollection) {
-
+      initViews : function (courseCollection, globalTimeTable) {
+        
         new CourseListView ({
-          collection : courseCollection
+          collection : courseCollection,
+          globalTimeTable : globalTimeTable
         });
 
         new FilterSpecializationView ({

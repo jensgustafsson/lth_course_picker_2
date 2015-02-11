@@ -13,22 +13,21 @@ define([
 			'click' : 'onClick',
 		},
         
-        onClick : function(){
-        	var studyYear = this.collection.filterData.activeYear;
-            Backbone.trigger('add:timeTable', {
-            	'studyYear': studyYear,
-            	'course': this.model
-            });
-        }
-        
-        ,
+    onClick : function(){
+    	var studyYear = this.collection.filterData.activeYear;
+      Backbone.trigger('add:timeTable', {
+      	'studyYear': studyYear,
+      	'course': this.model
+      });
+    },
 
 		initialize : function (args) {
 			this.studyYear = args.studyYear;
+      this.globalTimeTable = args.globalTimeTable;
 		},
 
 		render : function () {
-            return this;
+      return this;
 		},
 
  	});

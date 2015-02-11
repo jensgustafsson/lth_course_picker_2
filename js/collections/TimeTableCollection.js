@@ -11,7 +11,8 @@ define([
 
 		initialize : function (args) {
 			this.studyYear = args.studyYear;
-			this.listenTo(Backbone, 'add:timeTable', this.addCourse);
+			if(!(this.studyYear === 'none'))
+				this.listenTo(Backbone, 'add:timeTable', this.addCourse);
 		},
 
 		addCourse : function (args) {
