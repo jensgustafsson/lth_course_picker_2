@@ -9,8 +9,9 @@ define([
   'views/filter/FilterStudyYearView',
   'views/filter/FilterStudyPeriodView',
   'views/SpecializationTitleView',
-  'views/TimeTableView'
-], function ( $, _, Backbone, CourseCollection, TimeTableCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView, TimeTableView ) {
+  'views/TimeTableView',
+  'views/SummaryView'
+], function ( $, _, Backbone, CourseCollection, TimeTableCollection, CourseListView, FilterSpecializationView, FilterStudyYearView, FilterStudyPeriodView, SpecializationTitleView, TimeTableView, SummaryView ) {
 
     ApplicationRouter = Backbone.Router.extend({
 
@@ -70,6 +71,10 @@ define([
             'studyYear' : 'Extraår 2'
           }),
           'el' : '#studyExtraYear2'
+        });
+
+        new SummaryView({
+          collection : globalTimeTable
         });
 
       }
