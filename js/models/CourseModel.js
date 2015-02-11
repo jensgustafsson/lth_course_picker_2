@@ -13,6 +13,10 @@ define([
     	getStudyPeriods : function () {
     		return this.get('lasperioder');
     	},
+        
+        getCredits : function() {
+            return this.get('poang');   
+        },
 
     	hasStudyPeriod : function (thisPeriod) {
             
