@@ -15,7 +15,7 @@ define([
 		},
 
 		initialize : function (args) {
-
+			this.globalTimeTable = args.globalTimeTable;
 		},
 
 		render : function () {
@@ -25,6 +25,7 @@ define([
 
 			var view = new CourseAddView({
 				collection : this.collection,
+				globalTimeTable : this.globalTimeTable,
 				model : this.model
 			});
 			this.$el.append(view.render().el);

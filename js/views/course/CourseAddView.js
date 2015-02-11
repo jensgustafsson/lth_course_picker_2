@@ -14,11 +14,16 @@ define([
 		},
         
     onClick : function(){
-    	var studyYear = this.collection.filterData.activeYear;
-      Backbone.trigger('add:timeTable', {
-      	'studyYear': studyYear,
-      	'course': this.model
-      });
+      if(this.globalTimeTable.contains(this.model)) {
+        return;
+      } else {
+      	var studyYear = this.collection.filterData.activeYear;
+        Backbone.trigger('add:timeTable', {
+        	'studyYear': studyYear,
+        	'course': this.model
+        });
+        this.globalTimeTable.add(this.model);
+      }
     },
 
 		initialize : function (args) {

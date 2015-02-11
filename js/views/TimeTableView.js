@@ -2,8 +2,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/course/CourseItemView'
-], function ( $, _, Backbone, CourseItemView ) { 
+  'views/TimeTableItemView'
+], function ( $, _, Backbone, TimeTableItemView ) { 
 
   TimeTableView = Backbone.View.extend({
 
@@ -18,11 +18,9 @@ define([
 
     render : function() {
       this.$el.empty();
-
-      
       var container = document.createDocumentFragment();
       this.collection.each (function (course) {
-        var view = new CourseItemView({
+        var view = new TimeTableItemView({
           model : course
         });
         container.appendChild(view.render().el);

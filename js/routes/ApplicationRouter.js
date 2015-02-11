@@ -17,7 +17,7 @@ define([
       initialize : function() {
 
         var courseCollection = new CourseCollection();
-        var globalTimeTable = new TimeTableCollection({'studyYear' : 'none'});
+        var globalTimeTable = new TimeTableCollection([], {'studyYear' : 'none'});
         courseCollection.fetch({ reset: true });
         this.initViews(courseCollection, globalTimeTable);
 
@@ -45,28 +45,28 @@ define([
         new SpecializationTitleView();
 
         new TimeTableView({
-          collection : new TimeTableCollection({
+          collection : new TimeTableCollection([],{
             'studyYear' : 'Läsår 4'
           }),
           'el' : '#studyYear4'
         });
 
         new TimeTableView({
-          collection : new TimeTableCollection({
+          collection : new TimeTableCollection([],{
             'studyYear' : 'Läsår 5',
           }),
           'el' : '#studyYear5'
         });
 
         new TimeTableView({
-          collection : new TimeTableCollection({
+          collection : new TimeTableCollection([],{
             'studyYear' : 'Extraår 1'
           }),
           'el' : '#studyExtraYear1'
         });
 
         new TimeTableView({
-          collection : new TimeTableCollection({
+          collection : new TimeTableCollection([],{
             'studyYear' : 'Extraår 2'
           }),
           'el' : '#studyExtraYear2'
