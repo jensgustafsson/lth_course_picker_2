@@ -17,10 +17,7 @@ define([
     },
 
     render : function() {
-        console.log(this.collection);
-      this.$el.empty();
-
-      
+      this.$el.empty();      
       var container = document.createDocumentFragment();
       this.collection.each (function (course) {
         var view = new TimeTableItemView({

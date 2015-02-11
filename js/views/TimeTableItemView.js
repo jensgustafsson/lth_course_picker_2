@@ -1,8 +1,9 @@
 define([
   'jquery',
   'underscore',
-  'backbone'
-], function ( $, _, Backbone, TimeTableModel) { 
+  'backbone',
+  'views/TimeTableRemoveView'
+], function ( $, _, Backbone, TimeTableRemoveView) { 
 
     TimeTableItemView = Backbone.View.extend({
         
@@ -12,11 +13,11 @@ define([
 		render : function () {
 			this.$el.append(this.model.getCourseName()); 
 
-			//var view = new TimeTableRemoveView({
-			//	collection : this.collection,
-			//	model : this.model
-			//});
-			//this.$el.append(view.render().el);
+			var view = new TimeTableRemoveView({
+				collection : this.collection,
+				model : this.model
+			});
+			this.$el.append(view.render().el);
             return this;
 		},
 
