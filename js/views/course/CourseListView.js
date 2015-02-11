@@ -14,6 +14,7 @@ define([
     initialize : function(args) {
       this.listenToOnce(this.collection, 'reset', this.coursesLoaded);
       this.listenTo(this.collection, 'change', this.render);
+      this.globalTimeTable = args.globalTimeTable;
     },
 
     coursesLoaded : function () {
@@ -21,7 +22,7 @@ define([
     },
 
     render : function() {
-      var thisCollection = this.collection;
+      var self = this;
       this.$el.empty();
 
       var filteredCollection = 
@@ -30,7 +31,8 @@ define([
       var container = document.createDocumentFragment();
       filteredCollection.each (function (course) {
         var view = new CourseItemView({
-          collection : thisCollection,
+          collection : self.collection,
+          globalTimeTable : self.globalTimeTable,
           model : course
         });
         container.appendChild(view.render().el);

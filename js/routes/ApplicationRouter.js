@@ -17,15 +17,17 @@ define([
       initialize : function() {
 
         var courseCollection = new CourseCollection();
+        var globalTimeTable = new TimeTableCollection([], {'studyYear' : 'none'});
         courseCollection.fetch({ reset: true });
-        this.initViews(courseCollection);
+        this.initViews(courseCollection, globalTimeTable);
 
       },
 
-      initViews : function (courseCollection) {
-
+      initViews : function (courseCollection, globalTimeTable) {
+        
         new CourseListView ({
-          collection : courseCollection
+          collection : courseCollection,
+          globalTimeTable : globalTimeTable
         });
 
         new FilterSpecializationView ({
@@ -46,28 +48,32 @@ define([
           collection : new TimeTableCollection([],{
             'studyYear' : 'Läsår 4'
           }),
-          'el' : '#studyYear4'
+          'el' : '#studyYear4',
+          globalTimeTable : globalTimeTable
         });
 
         new TimeTableView({
           collection : new TimeTableCollection([],{
             'studyYear' : 'Läsår 5',
           }),
-          'el' : '#studyYear5'
+          'el' : '#studyYear5',
+          globalTimeTable : globalTimeTable
         });
 
         new TimeTableView({
           collection : new TimeTableCollection([],{
             'studyYear' : 'Extraår 1'
           }),
-          'el' : '#studyExtraYear1'
+          'el' : '#studyExtraYear1',
+          globalTimeTable : globalTimeTable
         });
 
         new TimeTableView({
           collection : new TimeTableCollection([],{
             'studyYear' : 'Extraår 2'
           }),
-          'el' : '#studyExtraYear2'
+          'el' : '#studyExtraYear2',
+          globalTimeTable : globalTimeTable
         });
 
       }
