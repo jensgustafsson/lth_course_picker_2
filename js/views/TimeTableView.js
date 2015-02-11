@@ -9,6 +9,8 @@ define([
   TimeTableView = Backbone.View.extend({
 
     initialize : function (args) {
+        this.periodName = args.periodName;
+        this.listOfCoursesID = args.listOfCoursesID;
     	this.el = args.el;
     	this.listenTo(this.collection, 'add', this.courseAdded);
       this.listenTo(this.collection, 'remove', this.render);
@@ -25,7 +27,7 @@ define([
         return sum + item.getCredits();
       },0)
       this.$el.empty();      
-      var container = "";
+      var container = document.createDocumentFragment();
       var self = this;
       this.collection.each (function (course) {
         var view = new TimeTableItemView({
@@ -33,18 +35,16 @@ define([
           collection : self.collection,
           globalTimeTable : self.globalTimeTable
         });
-          container = view.render().el;
-        //container.appendChild(view.render().el);
+        container.appendChild(view.render().el);
       });
-        console.log(String(container.nodeValue));
         this.$el.html(this.template({
-                'periodName'   : "test",
+                'periodName'   : this.periodName,
                 'nbrHP'    : credits,
-                'listOfCourses' : container
+                'listOfCoursesID' : this.listOfCoursesID
             }));
       //this.$el.append(container);
       //this.$el.append(credits);
-
+        $("#" + this.listOfCoursesID ).append(container);
       return this;
     },
 

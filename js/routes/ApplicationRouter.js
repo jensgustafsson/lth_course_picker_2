@@ -50,6 +50,8 @@ define([
             'studyYear' : 'Läsår 4'
           }),
           'el' : '#studyYear4',
+          'listOfCoursesID' : 'liY4',
+          'periodName' : 'Läsår 4',
           globalTimeTable : globalTimeTable
         });
 
@@ -58,6 +60,8 @@ define([
             'studyYear' : 'Läsår 5',
           }),
           'el' : '#studyYear5',
+          'listOfCoursesID' : 'liY5',
+          'periodName' : 'Läsår 5',
           globalTimeTable : globalTimeTable
         });
 
@@ -66,6 +70,8 @@ define([
             'studyYear' : 'Extraår 1'
           }),
           'el' : '#studyExtraYear1',
+          'listOfCoursesID' : 'liY1',
+          'periodName' : 'Extraår 1',
           globalTimeTable : globalTimeTable
         });
 
@@ -74,6 +80,8 @@ define([
             'studyYear' : 'Extraår 2'
           }),
           'el' : '#studyExtraYear2',
+          'listOfCoursesID' : 'liY2',
+          'periodName' : 'Extraår 2',
           globalTimeTable : globalTimeTable
         });
 
