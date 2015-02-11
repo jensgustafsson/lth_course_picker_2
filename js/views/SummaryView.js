@@ -11,11 +11,9 @@ define([
     	
     	initialize : function () {
     		this.listenTo(this.collection, 'add', this.render);
-    		//this.listenTo(this.collection, 'remove', this.render);
     	},
 	    
 	    render : function() {
-	    	console.log('render after add event')
 	    	this.$el.empty();
 			
 			var container = document.createDocumentFragment();
@@ -26,7 +24,6 @@ define([
 			  container.appendChild(view.render().el);
 			});
 			this.$el.append(container);
-			this.$el.append('hsadhdsaj');
 			console.log(this.el);
 
 			return this;
