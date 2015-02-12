@@ -35,10 +35,8 @@ define([
 
 			var allCreditsText = startTag + "Total poäng: " + credits + ' hp' + endTag;
 			var advanceCreditsText = startTag + "Avancerade poäng: " + advanceCredits + ' hp' + endTag;
-			var optionalCreditsText = startTag + "Valfria poäng: " + optionalCredits + ' hp' + endTag;
 			this.$el.append(allCreditsText);
 			this.$el.append(advanceCreditsText);
-			this.$el.append(optionalCreditsText);
 
 
 			return this;

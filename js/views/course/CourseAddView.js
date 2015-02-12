@@ -14,7 +14,7 @@ define([
 		},
         
     onClick : function(){
-      if(this.globalTimeTable.contains(this.model)) {
+      if(this.globalTimeTable.contains(this.model) || this.collection.filterData.activeYear === "none") {
         return;
       } else {
       	var studyYear = this.collection.filterData.activeYear;
