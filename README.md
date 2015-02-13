@@ -1,7 +1,7 @@
 LTH Course Picker
 =============
 
-Project by Jens Gustafsson and Alfred Åkesson
+Project by Jens Gustafsson and [Alfred Åkesson](http://www.alfredakesson.se) 
 
 About
 -----
@@ -12,9 +12,8 @@ The application is written in backboneJS and javascript.
 Usage
 -----
 
-To test the application, please follow any of these 2 links:
+To test the application, please follow the link:
 
 * http://lthcoursepicker-jensgustafsson.rhcloud.com
-* http://lthcoursepicker-alfredakesson.rhcloud.com
 
 Or, simply clone the repository and setup a local php server. 
